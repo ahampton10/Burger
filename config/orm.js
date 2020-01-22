@@ -17,11 +17,8 @@ function objToSql(ob) {
       arr.push(key + "=" + ob[key]);
     }
   }
-
   return arr.toString();
 }
-
-// Object for all our SQL statement functions.
 var orm = {
   selectAll: function(tableInput, cb) {
     connection.query("SELECT * FROM ??;", [tableInput], function(err, result) {
